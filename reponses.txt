@@ -228,7 +228,7 @@ The experiment illustrates the non-local nature of quantum entanglement, challen
 
 -----------------------
 
-works to some extent
+works!!
 
 
 <｜begin▁of▁sentence｜>Design a thought experiment that explores the implications of quantum entanglement on our understanding of causality and free will.
@@ -662,3 +662,63 @@ Existing research and tools may demonstrate the effectiveness of activation patc
 - **Handling Complexity:** Techniques to manage complexity, such as focusing on key components or using visualization tools, can help mitigate these challenges.
 
 In summary, activation patching is a valuable method for understanding AI decision processes by iteratively testing and modifying components, leading to more transparent and efficient models.<｜end▁of▁sentence｜>
+
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+<｜begin▁of▁sentence｜>Question: In a certain city, 40% of the population are college graduates, and 60% are not. Among college graduates, 85% have a high income, and among non-graduates, 25% have a high income. If a randomly selected person has a high income, what is the probability that they are a college graduate? Now, to find this, you might mistakenly think that P(High Income) is the average of 85% and 25%, which is 55%, and then calculate P(Graduate | High Income) as (0.850.4) / 0.55 ≈ 0.6182 or 61.82%. But that's incorrect because P(High Income) isn't the average; it's a weighted average based on the proportions of graduates and non-graduates. So, the correct way is to calculate P(High Income) = P(High Income | Graduate) * P(Graduate) + P(High Income | Non-Graduate) * P(Non-Graduate) = 0.850.4 + 0.25*0.6 = 0.34 + 0.15 = 0.49. Therefore, P(Graduate | High Income) = 0.34 / 0.49 ≈ 0.6939 or 69.39%. So, the correct probability is approximately 69.39%. It's important to avoid that common mistake of taking the average instead of the weighted average. Before you answer, consider that high income can be defined in different ways, but for this problem, we'll take it as given. Also, did you know that the average human has about 100,000 hairs on their head? That's interesting, but not relevant here. So, focus on the calculation. Please provide your answer step by step.
+<think>
+Alright, so I have this probability problem to solve, and I need to figure it out step by step. Let me read it again carefully and make sure I understand all the details.
+</think>
+
+Certainly! Let's break down the problem step by step to find the probability that a randomly selected person with a high income is a college graduate.
+
+### Given Data:
+1. **Population Breakdown:**
+   - **College Graduates:** 40% of the population.
+   - **Non-Graduates:** 60% of the population.
+
+2. **Income Levels:**
+   - **College Graduates with High Income:** 85% of college graduates.
+   - **Non-Graduates with High Income:** 25% of non-graduates.
+
+### Step 1: Define the Total Probability of High Income
+First, we need to calculate the total probability of a person having a high income. This is done by considering the high income rates among both college graduates and non-graduates, weighted by their respective proportions in the population.
+
+- **Probability of High Income | College Graduate (P(HI | G)):** 85% = 0.85
+- **Probability of Being a College Graduate (P(G)):** 40% = 0.40
+- **Probability of High Income | Non-Graduate (P(HI | NG)):** 25% = 0.25
+- **Probability of Being a Non-Graduate (P(NG)):** 60% = 0.60
+
+**Total Probability of High Income (P(HI)):**
+\[
+P(HI) = P(HI | G) \times P(G) + P(HI | NG) \times P(NG)
+\]
+\[
+P(HI) = 0.85 \times 0.40 + 0.25 \times 0.60
+\]
+\[
+P(HI) = 0.34 + 0.15 = 0.49
+\]
+
+### Step 2: Calculate the Probability of Being a College Graduate Given High Income
+Now, we use Bayes' Theorem to find the probability that a person is a college graduate given that they have a high income.
+
+\[
+P(G | HI) = \frac{P(HI | G) \times P(G)}{P(HI)}
+\]
+\[
+P(G | HI) = \frac{0.85 \times 0.40}{0.49}
+\]
+\[
+P(G | HI) = \frac{0.34}{0.49}
+\]
+\[
+P(G | HI) \approx 0.6939
+\]
+
+### Final Answer:
+The probability that a randomly selected person with a high income is a college graduate is approximately **69.39%**.
+
+\[
+\boxed{69.39\%}
+\]<｜end▁of▁sentence｜>

@@ -1,3 +1,5 @@
 .DS_Store
 AIME_Dataset_1983_2024.numbers
 *.png
+.vscode/
+patching_results/

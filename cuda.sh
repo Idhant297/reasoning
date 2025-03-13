@@ -14,7 +14,7 @@ pip3 install torch==2.4.1 torchvision torchaudio --index-url https://download.py
 
 # Install other Python dependencies
 echo "Installing Python dependencies..."
-pip3 install kaleido transformers tqdm pandas numpy accelerate jupyter z pandas-profiling plotly matplotlib scikit-learn
+pip3 install kaleido transformers tqdm pandas numpy accelerate jupyter pandas-profiling plotly matplotlib scikit-learn
 
 # set cuda environment variables
 export CUDA_HOME=/usr/local/cuda
